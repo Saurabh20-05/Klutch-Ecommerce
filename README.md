@@ -39,15 +39,21 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 
 <img width="1900" height="867" alt="image" src="https://github.com/user-attachments/assets/767e6d4f-7ed7-476b-bf4f-175b96598ba6" />
 
-## Customer - Orders Page
+## Customer - Orders Confirmation
 
 <img width="1899" height="869" alt="image" src="https://github.com/user-attachments/assets/5985b4a6-3b60-4f7c-b16c-0c00ab78574a" />
 
-## Customer - 
+## Customer - Orders Page
 
 <img width="1904" height="864" alt="image" src="https://github.com/user-attachments/assets/281e52a2-23cf-4376-b63c-b3f2f231eb70" />
 <img width="1892" height="861" alt="image" src="https://github.com/user-attachments/assets/e1389cb9-7da5-4ba9-8ab8-e3ee0ace18f1" />
+
+## Customer - Review Page
+
 <img width="1901" height="868" alt="image" src="https://github.com/user-attachments/assets/6f91aaf9-aa40-4b35-879d-036d8249aaeb" />
+
+## Customer - Return/Replacement Page
+
 <img width="1896" height="868" alt="image" src="https://github.com/user-attachments/assets/b279c354-7a24-4b2c-a987-6ae8fcb54bdc" />
 
 
