@@ -20,6 +20,20 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 - Leave product reviews
 - Fully responsive customer interface
 
+<img width="1898" height="870" alt="image" src="https://github.com/user-attachments/assets/b43f1634-8188-44ab-8aa2-fe81b35883d7" />
+<img width="1900" height="869" alt="image" src="https://github.com/user-attachments/assets/3e928d49-e6db-419c-815f-999cdeac36f2" />
+<img width="1902" height="864" alt="image" src="https://github.com/user-attachments/assets/ca512a0f-f9ec-4a93-a480-510e34697457" />
+<img width="1901" height="871" alt="image" src="https://github.com/user-attachments/assets/a5189bad-bc64-432b-af0f-8dca47f6475a" />
+<img width="1900" height="868" alt="image" src="https://github.com/user-attachments/assets/81d899f7-6d31-4c28-9b68-d6cca00ba5d1" />
+<img width="1895" height="867" alt="image" src="https://github.com/user-attachments/assets/3496b4fe-465c-4854-879e-bd5a040a0b53" />
+<img width="1900" height="867" alt="image" src="https://github.com/user-attachments/assets/767e6d4f-7ed7-476b-bf4f-175b96598ba6" />
+<img width="1899" height="869" alt="image" src="https://github.com/user-attachments/assets/5985b4a6-3b60-4f7c-b16c-0c00ab78574a" />
+<img width="1904" height="864" alt="image" src="https://github.com/user-attachments/assets/281e52a2-23cf-4376-b63c-b3f2f231eb70" />
+<img width="1892" height="861" alt="image" src="https://github.com/user-attachments/assets/e1389cb9-7da5-4ba9-8ab8-e3ee0ace18f1" />
+<img width="1901" height="868" alt="image" src="https://github.com/user-attachments/assets/6f91aaf9-aa40-4b35-879d-036d8249aaeb" />
+<img width="1896" height="868" alt="image" src="https://github.com/user-attachments/assets/b279c354-7a24-4b2c-a987-6ae8fcb54bdc" />
+
+
 ---
 
 ## Vendor Features
@@ -35,6 +49,15 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 - Update order status
 - Responsive vendor portal
 
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/efa422f9-e9ee-4912-a927-a2056e6046db" />
+<img width="1902" height="866" alt="image" src="https://github.com/user-attachments/assets/b521750a-af9c-4f88-a714-3a25e8d04531" />
+<img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/f51d9439-9eaf-4963-a2f3-c5373e101e8b" />
+<img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/9e93f392-883d-44f6-a3f9-79f25fc57093" />
+<img width="1919" height="862" alt="image" src="https://github.com/user-attachments/assets/66961944-01d3-411f-9b02-ab4e7bc89ed7" />
+<img width="1892" height="869" alt="image" src="https://github.com/user-attachments/assets/558038f9-7e90-44d8-9e30-03f0b0edf3c8" />
+<img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/1fa51c77-3f37-4a91-b770-983b82238729" />
+
+
 ---
 
 ## Admin Features
@@ -45,6 +68,9 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 - Manage users
 - Manage products
 - Monitor orders
+
+<img width="1901" height="872" alt="image" src="https://github.com/user-attachments/assets/0bf7aad4-961b-4f2a-bed2-4fea97e9b850" />
+
 
 ---
 
