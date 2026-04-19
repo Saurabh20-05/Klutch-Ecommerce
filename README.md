@@ -23,17 +23,20 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 
 ## Customer - Home Page
 
-<img width="1898" height="870" alt="image" src="https://github.com/user-attachments/assets/b43f1634-8188-44ab-8aa2-fe81b35883d7" />
+<img width="1897" height="867" alt="image" src="https://github.com/user-attachments/assets/0ffca78e-8451-459a-8218-9b8783750fcb" />
+<img width="1898" height="702" alt="image" src="https://github.com/user-attachments/assets/b475fe02-5388-4ffd-9307-87e9b1bfec2a" />
+<img width="1898" height="634" alt="image" src="https://github.com/user-attachments/assets/7afc9b65-7fea-4bfd-81be-82f572a9df35" />
+<img width="1898" height="719" alt="image" src="https://github.com/user-attachments/assets/e0ce6d76-7ef2-4bb0-9b94-b956dd6a5756" />
+<img width="1900" height="307" alt="image" src="https://github.com/user-attachments/assets/05f84fd2-e564-412d-b709-860d9c6ae12b" />
+<img width="1896" height="640" alt="image" src="https://github.com/user-attachments/assets/f1c5b55e-b939-44e3-b094-603ba99b2e21" />
+<img width="1897" height="369" alt="image" src="https://github.com/user-attachments/assets/f8c7c6ad-23d7-44d7-8328-3b64d435d506" />
 
-<img width="1900" height="869" alt="image" src="https://github.com/user-attachments/assets/3e928d49-e6db-419c-815f-999cdeac36f2" />
+## Customer - Product Page
 
-<img width="1902" height="864" alt="image" src="https://github.com/user-attachments/assets/ca512a0f-f9ec-4a93-a480-510e34697457" />
-
-<img width="1901" height="871" alt="image" src="https://github.com/user-attachments/assets/a5189bad-bc64-432b-af0f-8dca47f6475a" />
-
-<img width="1900" height="868" alt="image" src="https://github.com/user-attachments/assets/81d899f7-6d31-4c28-9b68-d6cca00ba5d1" />
-
-<img width="1895" height="867" alt="image" src="https://github.com/user-attachments/assets/3496b4fe-465c-4854-879e-bd5a040a0b53" />
+<img width="1897" height="871" alt="image" src="https://github.com/user-attachments/assets/da8ee043-e7a5-42d7-874b-b8333d1ae531" />
+<img width="1898" height="756" alt="image" src="https://github.com/user-attachments/assets/cf8fe2a1-82e5-4f5f-bac7-fe96cbfd478a" />
+<img width="1896" height="867" alt="image" src="https://github.com/user-attachments/assets/7098ec2b-b649-4027-b0ca-82e4d65c28c6" />
+<img width="1898" height="865" alt="image" src="https://github.com/user-attachments/assets/57b38cea-bb6c-4187-9ebe-29a7ee0443db" />
 
 ## Customer - Cart Page
 
