@@ -20,14 +20,31 @@ A full-stack **multi-vendor e-commerce marketplace** built with the **MERN stack
 - Leave product reviews
 - Fully responsive customer interface
 
+
+## Customer - Home Page
+
 <img width="1898" height="870" alt="image" src="https://github.com/user-attachments/assets/b43f1634-8188-44ab-8aa2-fe81b35883d7" />
+
 <img width="1900" height="869" alt="image" src="https://github.com/user-attachments/assets/3e928d49-e6db-419c-815f-999cdeac36f2" />
+
 <img width="1902" height="864" alt="image" src="https://github.com/user-attachments/assets/ca512a0f-f9ec-4a93-a480-510e34697457" />
+
 <img width="1901" height="871" alt="image" src="https://github.com/user-attachments/assets/a5189bad-bc64-432b-af0f-8dca47f6475a" />
+
 <img width="1900" height="868" alt="image" src="https://github.com/user-attachments/assets/81d899f7-6d31-4c28-9b68-d6cca00ba5d1" />
+
 <img width="1895" height="867" alt="image" src="https://github.com/user-attachments/assets/3496b4fe-465c-4854-879e-bd5a040a0b53" />
+
+## Customer - Cart Page
+
 <img width="1900" height="867" alt="image" src="https://github.com/user-attachments/assets/767e6d4f-7ed7-476b-bf4f-175b96598ba6" />
+
+## Customer - Orders Page
+
 <img width="1899" height="869" alt="image" src="https://github.com/user-attachments/assets/5985b4a6-3b60-4f7c-b16c-0c00ab78574a" />
+
+## Customer - 
+
 <img width="1904" height="864" alt="image" src="https://github.com/user-attachments/assets/281e52a2-23cf-4376-b63c-b3f2f231eb70" />
 <img width="1892" height="861" alt="image" src="https://github.com/user-attachments/assets/e1389cb9-7da5-4ba9-8ab8-e3ee0ace18f1" />
 <img width="1901" height="868" alt="image" src="https://github.com/user-attachments/assets/6f91aaf9-aa40-4b35-879d-036d8249aaeb" />
