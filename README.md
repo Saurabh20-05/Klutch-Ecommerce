@@ -171,49 +171,6 @@ npm start
 
 ---
 
-# API Endpoints
-
-## Auth
-
-```http
-POST /api/auth/register
-POST /api/auth/login
-```
-
-## Products
-
-```http
-GET /api/products
-POST /api/products
-PUT /api/products/:id
-DELETE /api/products/:id
-```
-
-## Cart
-
-```http
-POST /api/cart/add
-GET /api/cart
-PUT /api/cart/update
-```
-
-## Orders
-
-```http
-POST /api/orders
-GET /api/orders/my
-GET /api/orders/vendor
-```
-
-## Returns
-
-```http
-POST /api/returns
-GET /api/returns/my
-```
-
----
-
 # Authentication
 
 Uses:
