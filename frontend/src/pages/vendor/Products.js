@@ -35,25 +35,27 @@ export default function VendorProducts() {
   }, [fetchProducts]);
 
   const deleteProduct = async (id) => {
-    if (!window.confirm("Delete this product?")) return;
+  if (!window.confirm("Delete this product?")) return;
 
-    try {
-      await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/products/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
+  try {
+    await axios.delete(
+      `${process.env.REACT_APP_API_URL}/api/products/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
 
-      toast.success("Product deleted");
-      fetchProducts();
+    toast.success("Product deleted");
 
-    } catch (error) {
-      toast.error("Delete failed");
-    }
-  };
+    fetchProducts();
+
+  } catch (error) {
+    console.error(error.response?.data || error);
+    toast.error("Delete failed");
+  }
+};
 
   return (
     <div>
