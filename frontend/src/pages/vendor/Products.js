@@ -34,7 +34,7 @@ export default function VendorProducts() {
     fetchProducts();
   }, [fetchProducts]);
 
-  const deleteProduct = async (id) => {
+ const deleteProduct = async (id) => {
   if (!window.confirm("Delete this product?")) return;
 
   try {
@@ -48,11 +48,10 @@ export default function VendorProducts() {
     );
 
     toast.success("Product deleted");
-
     fetchProducts();
 
   } catch (error) {
-    console.error(error.response?.data || error);
+    console.error(error);
     toast.error("Delete failed");
   }
 };
