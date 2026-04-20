@@ -15,9 +15,7 @@ export default function ProductReviews() {
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
- fetchData();
-}, [fetchData]);
+
 
   const fetchData = useCallback(async () => {
     try {
@@ -57,6 +55,19 @@ export default function ProductReviews() {
       setLoading(false);
     }
   }, [id, user]);
+
+
+
+
+
+
+
+
+  useEffect(() => {
+ fetchData();
+}, [fetchData]);
+
+  
 
   const submitReview = async () => {
     if (!comment.trim()) {

@@ -9,9 +9,10 @@ export default function OrderSuccess() {
   const navigate = useNavigate();
   const [order, setOrder] = useState(null);
 
-  useEffect(() => {
- fetchOrder();
-}, [fetchOrder]);
+
+
+
+
 
   const fetchOrder = useCallback(async () => {
     try {
@@ -29,6 +30,15 @@ export default function OrderSuccess() {
       console.error(err);
     }
   }, [id, user]);
+
+
+
+
+ useEffect(() => {
+ fetchOrder();
+}, [fetchOrder]);
+
+  
 
   if (!order)
     return (

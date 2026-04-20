@@ -16,7 +16,6 @@ import AdminDashboard from "./pages/AdminDashboard";
 import MyOrders from "./pages/MyOrders";
 import OrderSuccess from "./pages/OrderSuccess";
 import ProductReviews from "./pages/ProductReviews";
-import Footer from "./components/Footer";
 
 import RequestReturn from "./pages/RequestReturn";
 import MyReturns from "./pages/MyReturns";

@@ -11,10 +11,8 @@ export default function Cart() {
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
- if (!user) return;
- fetchCart();
-}, [fetchCart]);
+
+
 
   const fetchCart = useCallback(async () => {
     try {
@@ -34,6 +32,16 @@ export default function Cart() {
       setLoading(false);
     }
   }, [user]);
+
+
+
+
+  useEffect(() => {
+ if (!user) return;
+ fetchCart();
+}, [fetchCart, user]);
+
+  
 
   const updateQuantity = async (productId, quantity) => {
     if (quantity < 1) return;
