@@ -99,7 +99,7 @@ export default function MyReturns() {
                       req.image
                         ? req.image.startsWith("http")
                           ? req.image
-                          : `http://localhost:5000/${req.image.replace(
+                          : `${process.env.REACT_APP_API_URL}/${req.image.replace(
                               /^\/+/,
                               ""
                             )}`

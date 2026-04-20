@@ -138,7 +138,7 @@ export default function MyOrders() {
                                       "http"
                                     )
                                     ? item.image
-                                    : `http://localhost:5000/${item.image.replace(
+                                    : `${process.env.REACT_APP_API_URL}/${item.image.replace(
                                         /^\/+/,
                                         ""
                                       )}`

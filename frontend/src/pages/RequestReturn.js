@@ -19,7 +19,7 @@ export default function RequestReturn() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/returns/${orderId}/${productId}`,
+          `${process.env.REACT_APP_API_URL}/api/returns/${orderId}/${productId}`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
@@ -90,7 +90,7 @@ export default function RequestReturn() {
               orderItem.image
                 ? orderItem.image.startsWith("http")
                   ? orderItem.image
-                  : `http://localhost:5000/${orderItem.image.replace(
+                  : `${process.env.REACT_APP_API_URL}/${orderItem.image.replace(
                       /^\/+/,
                       ""
                     )}`

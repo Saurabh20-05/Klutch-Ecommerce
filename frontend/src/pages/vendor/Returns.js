@@ -45,7 +45,7 @@ export default function VendorReturns() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/returns/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/returns/${id}`,
         {
           status,
           adminComment: comment || "",
@@ -116,7 +116,7 @@ export default function VendorReturns() {
               <img
                 src={
                   req.image
-                    ? `http://localhost:5000/${req.image.replace(
+                    ? `${process.env.REACT_APP_API_URL}/${req.image.replace(
                         /^\/+/,
                         ""
                       )}`

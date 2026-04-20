@@ -20,11 +20,11 @@ export default function ProductReviews() {
   const fetchData = useCallback(async () => {
     try {
       const productRes = await axios.get(
-        `http://localhost:5000/api/products/${id}`
+        `${process.env.REACT_APP_API_URL}/api/products/${id}`
       );
 
       const reviewRes = await axios.get(
-        `http://localhost:5000/api/reviews/${id}`
+        `${process.env.REACT_APP_API_URL}/api/reviews/${id}`
       );
 
       setProduct(productRes.data);
@@ -123,7 +123,7 @@ export default function ProductReviews() {
 
       <div className="bg-white rounded-2xl shadow-lg p-8 mb-10 flex flex-col md:flex-row gap-8">
         <img
-          src={`http://localhost:5000${product.image}`}
+          src={`${process.env.REACT_APP_API_URL}${product.image}`}
           alt={product.name}
           className="w-56 h-56 object-contain bg-gray-100 rounded-xl"
         />

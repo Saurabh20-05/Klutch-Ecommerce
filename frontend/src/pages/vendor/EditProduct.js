@@ -22,7 +22,7 @@ export default function EditProduct() {
   const fetchProduct = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/products/${id}`
+        `${process.env.REACT_APP_API_URL}/api/products/${id}`
       );
 
       setForm({
@@ -59,7 +59,7 @@ export default function EditProduct() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/products/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/products/${id}`,
         formData,
         {
           headers: {
