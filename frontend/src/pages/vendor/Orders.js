@@ -43,7 +43,7 @@ export default function VendorOrders() {
       console.error(error);
       toast.error("Error fetching orders");
     }
-  }, [user]);
+  }, []);
 
   const filterOrders = () => {
     let filtered = [...orders];
@@ -76,7 +76,7 @@ export default function VendorOrders() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/orders/vendor/${orderId}`,
+`${process.env.REACT_APP_API_URL}/api/orders/vendor/${orderId}`,
         { status: newStatus },
         {
           headers: {
