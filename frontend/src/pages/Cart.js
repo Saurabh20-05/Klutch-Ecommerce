@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -12,11 +12,11 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) return;
-    fetchCart();
-  }, [user]);
+ if (!user) return;
+ fetchCart();
+}, [fetchCart]);
 
-  const fetchCart = async () => {
+  const fetchCart = useCallback(async () => {
     try {
       const { data } = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/cart`,
@@ -33,7 +33,7 @@ export default function Cart() {
       console.error(error);
       setLoading(false);
     }
-  };
+  }, [user]);
 
   const updateQuantity = async (productId, quantity) => {
     if (quantity < 1) return;

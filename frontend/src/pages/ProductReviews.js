@@ -16,10 +16,10 @@ export default function ProductReviews() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchData();
-  }, [id]);
+ fetchData();
+}, [fetchData]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const productRes = await axios.get(
         `http://localhost:5000/api/products/${id}`
@@ -56,7 +56,7 @@ export default function ProductReviews() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, user]);
 
   const submitReview = async () => {
     if (!comment.trim()) {

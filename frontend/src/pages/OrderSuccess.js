@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
@@ -10,10 +10,10 @@ export default function OrderSuccess() {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-    fetchOrder();
-  }, []);
+ fetchOrder();
+}, [fetchOrder]);
 
-  const fetchOrder = async () => {
+  const fetchOrder = useCallback(async () => {
     try {
       const { data } = await axios.get(
   `${process.env.REACT_APP_API_URL}/api/orders/${id}`,
@@ -28,7 +28,7 @@ export default function OrderSuccess() {
     } catch (err) {
       console.error(err);
     }
-  };
+  }, [id, user]);
 
   if (!order)
     return (
