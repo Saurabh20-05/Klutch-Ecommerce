@@ -42,12 +42,12 @@ const VendorReviews = () => {
 
 
 
-  
+
 
   useEffect(() => {
   if (!user?.token) return;
   fetchReviews();
-}, [fetchReviews]);
+}, [fetchReviews, user?.token]);
 
   
 

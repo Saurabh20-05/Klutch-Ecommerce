@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ export default function VendorProducts() {
 
 
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
       const { data } = await axios.get(
  `${process.env.REACT_APP_API_URL}/api/products/vendor/my`,
@@ -27,7 +27,7 @@ export default function VendorProducts() {
     } catch (error) {
       toast.error("Failed to load products");
     }
-  };
+  }, []);
 
   useEffect(() => {
  fetchProducts();

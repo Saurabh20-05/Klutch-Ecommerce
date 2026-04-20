@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 
@@ -8,7 +8,7 @@ export default function VendorReturns() {
   const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState({});
 
-  const fetchReturns = async () => {
+  const fetchReturns = useCallback(async () => {
     try {
       const { data } = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/returns/admin/all`,
@@ -25,14 +25,14 @@ export default function VendorReturns() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
 
 
-  
+
 
   useEffect(() => {
-  fetchReturns();
+ fetchReturns();
 }, [fetchReturns]);
 
   

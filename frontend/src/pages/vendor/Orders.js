@@ -10,13 +10,6 @@ export default function VendorOrders() {
   const [search, setSearch] = useState("");
   const [selectedOrder, setSelectedOrder] = useState(null);
 
-  useEffect(() => {
- fetchOrders();
-}, [fetchOrders]);
-
-  useEffect(() => {
-    filterOrders();
-  }, [statusFilter, search, orders]);
 
   const fetchOrders = useCallback(async () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -45,6 +38,10 @@ export default function VendorOrders() {
     }
   }, []);
 
+
+
+
+
   const filterOrders = () => {
     let filtered = [...orders];
 
@@ -62,6 +59,23 @@ export default function VendorOrders() {
 
     setFilteredOrders(filtered);
   };
+
+
+
+  
+
+
+  useEffect(() => {
+ fetchOrders();
+}, [fetchOrders]);
+
+  useEffect(() => {
+    filterOrders();
+  }, [statusFilter, search, orders]);
+
+  
+
+  
 
   const updateStatus = async (orderId, newStatus) => {
     if (newStatus === "Update") return;
