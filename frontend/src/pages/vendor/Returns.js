@@ -8,10 +8,6 @@ export default function VendorReturns() {
   const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState({});
 
-  useEffect(() => {
-  fetchReturns();
-}, [fetchReturns]);
-
   const fetchReturns = async () => {
     try {
       const { data } = await axios.get(
@@ -30,6 +26,16 @@ export default function VendorReturns() {
       setLoading(false);
     }
   };
+
+
+
+  
+
+  useEffect(() => {
+  fetchReturns();
+}, [fetchReturns]);
+
+  
 
   const updateStatus = async (id, status, comment) => {
     if (!status) {

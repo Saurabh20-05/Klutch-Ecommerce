@@ -9,10 +9,9 @@ const VendorReviews = () => {
   const [sort, setSort] = useState("newest");
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-  if (!user?.token) return;
-  fetchReviews();
-}, [fetchReviews]);
+
+
+
 
   const fetchReviews = useCallback(async () => {
     try {
@@ -38,6 +37,19 @@ const VendorReviews = () => {
       console.log(error);
     }
   }, [user]);
+
+
+
+
+
+  
+
+  useEffect(() => {
+  if (!user?.token) return;
+  fetchReviews();
+}, [fetchReviews]);
+
+  
 
   const sortedReviews = [...reviews]
     .filter((r) =>

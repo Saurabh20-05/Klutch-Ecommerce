@@ -9,9 +9,8 @@ export default function VendorProducts() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+
+
 
   const fetchProducts = async () => {
     try {
@@ -29,6 +28,12 @@ export default function VendorProducts() {
       toast.error("Failed to load products");
     }
   };
+
+  useEffect(() => {
+ fetchProducts();
+}, [fetchProducts]);
+
+  
 
   const deleteProduct = async (id) => {
     if (!window.confirm("Delete this product?")) return;
