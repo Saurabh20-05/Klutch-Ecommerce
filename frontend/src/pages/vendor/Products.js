@@ -9,38 +9,37 @@ export default function VendorProducts() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
-
-
-
   const fetchProducts = useCallback(async () => {
     try {
       const { data } = await axios.get(
- `${process.env.REACT_APP_API_URL}/api/products/vendor/my`,
- {
-   headers:{
-      Authorization:`Bearer ${user.token}`
-   }
- }
-);
+        `${process.env.REACT_APP_API_URL}/api/products/vendor/my`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
 
       setProducts(data);
+
+      // Debug (can remove later)
+      console.log("Vendor Products:", data);
+
     } catch (error) {
       toast.error("Failed to load products");
     }
   }, [user?.token]);
 
   useEffect(() => {
- fetchProducts();
-}, [fetchProducts]);
-
-  
+    fetchProducts();
+  }, [fetchProducts]);
 
   const deleteProduct = async (id) => {
     if (!window.confirm("Delete this product?")) return;
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/products/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/products/${id}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -62,20 +61,38 @@ export default function VendorProducts() {
         Manage Products
       </h2>
 
-      <div className="grid grid-cols-1
-sm:grid-cols-2
-lg:grid-cols-3
-xl:grid-cols-4 gap-8">
+      <div
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          gap-8
+        "
+      >
         {products.map((product) => (
           <div
             key={product._id}
             className="bg-white rounded-xl shadow p-6"
           >
+
             <img
-  src={`${process.env.REACT_APP_API_URL}${product.image}`}
-  alt={product.name}
-  className="w-full h-56 object-cover"
-/>
+              src={
+                product.image?.startsWith("http")
+                  ? product.image
+                  : `${process.env.REACT_APP_API_URL}${
+                      product.image?.startsWith("/")
+                        ? product.image
+                        : "/" + product.image
+                    }`
+              }
+              alt={product.name}
+              className="w-full h-56 object-cover rounded-lg mb-4"
+              onError={(e) => {
+                console.log("Broken image URL:", e.target.src);
+              }}
+            />
 
             <h3 className="text-xl font-semibold">
               {product.name}
@@ -108,6 +125,7 @@ xl:grid-cols-4 gap-8">
                 Delete
               </button>
             </div>
+
           </div>
         ))}
       </div>
