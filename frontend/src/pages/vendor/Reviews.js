@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 
@@ -10,11 +10,11 @@ const VendorReviews = () => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    if (!user?.token) return;
-    fetchReviews();
-  }, [user]);
+  if (!user?.token) return;
+  fetchReviews();
+}, [fetchReviews]);
 
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       const { data } = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/reviews/vendor`,
@@ -37,7 +37,7 @@ const VendorReviews = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [user]);
 
   const sortedReviews = [...reviews]
     .filter((r) =>
@@ -141,7 +141,7 @@ const VendorReviews = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <img
-                    src={`http://localhost:5000${review.product?.image}`}
+                    src={`${process.env.REACT_APP_API_URL}${review.product?.image}`}
                     alt="product"
                     className="w-16 h-16 object-cover rounded-lg"
                   />

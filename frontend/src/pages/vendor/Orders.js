@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { getStatusColor } from "../../utils/statusColor";
 import toast from "react-hot-toast";
@@ -11,14 +11,14 @@ export default function VendorOrders() {
   const [selectedOrder, setSelectedOrder] = useState(null);
 
   useEffect(() => {
-    fetchOrders();
-  }, []);
+ fetchOrders();
+}, [fetchOrders]);
 
   useEffect(() => {
     filterOrders();
   }, [statusFilter, search, orders]);
 
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const token = storedUser?.token;
 
@@ -43,7 +43,7 @@ export default function VendorOrders() {
       console.error(error);
       toast.error("Error fetching orders");
     }
-  };
+  }, [user]);
 
   const filterOrders = () => {
     let filtered = [...orders];

@@ -9,8 +9,8 @@ export default function VendorReturns() {
   const [comments, setComments] = useState({});
 
   useEffect(() => {
-    fetchReturns();
-  }, []);
+  fetchReturns();
+}, [fetchReturns]);
 
   const fetchReturns = async () => {
     try {

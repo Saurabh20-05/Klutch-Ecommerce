@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -19,10 +19,10 @@ export default function EditProduct() {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
-    fetchProduct();
-  }, []);
+ fetchProduct();
+}, [fetchProduct]);
 
-  const fetchProduct = async () => {
+  const fetchProduct = useCallback(async () => {
     try {
       const { data } = await axios.get(
         `http://localhost:5000/api/products/${id}`
@@ -38,7 +38,7 @@ export default function EditProduct() {
     } catch (error) {
       toast.error("Failed to load product");
     }
-  };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
