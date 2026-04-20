@@ -72,10 +72,10 @@ xl:grid-cols-4 gap-8">
             className="bg-white rounded-xl shadow p-6"
           >
             <img
-              src={`http://localhost:5000${product.image}`}
-              alt={product.name}
-              className="w-full aspect-square object-cover mb-4"
-            />
+  src={`${process.env.REACT_APP_API_URL}${product.image}`}
+  alt={product.name}
+  className="w-full h-56 object-cover"
+/>
 
             <h3 className="text-xl font-semibold">
               {product.name}
