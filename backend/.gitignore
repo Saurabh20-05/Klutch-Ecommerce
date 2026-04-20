@@ -4,8 +4,7 @@ node_modules/
 # Secrets
 .env
 
-# User uploads (optional, usually ignore)
-uploads/
+
 
 # Logs
 *.log
