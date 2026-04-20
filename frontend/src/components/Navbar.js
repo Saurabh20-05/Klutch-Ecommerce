@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
@@ -15,10 +15,21 @@ export default function Navbar() {
     navigate("/login");
   };
 
+  const activeClass = ({ isActive }) =>
+    isActive
+      ? "text-blue-600 font-semibold border-b-2 border-blue-600 pb-1"
+      : "hover:text-blue-600 transition";
+
+  const mobileActiveClass = ({ isActive }) =>
+    isActive
+      ? "text-blue-600 font-semibold"
+      : "text-gray-700";
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md border-b px-4 md:px-8 lg:px-10 py-4">
       <div className="flex justify-between items-center">
-        <Link
+
+        <NavLink
           to={role === "vendor" ? "/vendor" : "/"}
           className="flex flex-col leading-tight"
         >
@@ -29,53 +40,54 @@ export default function Navbar() {
           <span className="text-xs text-gray-500">
             Vendor Marketplace
           </span>
-        </Link>
+        </NavLink>
 
         <div className="hidden md:flex flex-wrap justify-end gap-4 md:gap-8 items-center text-sm font-medium text-gray-700">
+
           {role === "customer" && (
             <>
-              <Link to="/" className="hover:text-blue-600 transition">
+              <NavLink to="/" end className={activeClass}>
                 Home
-              </Link>
+              </NavLink>
 
-              <Link to="/cart" className="hover:text-blue-600 transition">
+              <NavLink to="/cart" className={activeClass}>
                 Cart
-              </Link>
+              </NavLink>
 
-              <Link to="/orders" className="hover:text-blue-600 transition">
+              <NavLink to="/orders" className={activeClass}>
                 Orders
-              </Link>
+              </NavLink>
 
-              <Link to="/my-returns" className="hover:text-blue-600 transition">
+              <NavLink to="/my-returns" className={activeClass}>
                 Returns
-              </Link>
+              </NavLink>
             </>
           )}
 
           {role === "vendor" && (
-            <Link to="/vendor" className="hover:text-blue-600 transition">
+            <NavLink to="/vendor" className={activeClass}>
               Vendor Panel
-            </Link>
+            </NavLink>
           )}
 
           {role === "admin" && (
-            <Link to="/admin" className="hover:text-blue-600 transition">
+            <NavLink to="/admin" className={activeClass}>
               Admin Panel
-            </Link>
+            </NavLink>
           )}
 
           {!user ? (
             <>
-              <Link to="/login" className="hover:text-blue-600 transition">
+              <NavLink to="/login" className={activeClass}>
                 Login
-              </Link>
+              </NavLink>
 
-              <Link
+              <NavLink
                 to="/register"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition"
               >
                 Register
-              </Link>
+              </NavLink>
             </>
           ) : (
             <button
@@ -85,6 +97,7 @@ export default function Navbar() {
               Logout
             </button>
           )}
+
         </div>
 
         <button
@@ -97,47 +110,81 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden mt-4 bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 text-gray-700 font-medium">
+
           {role === "customer" && (
             <>
-              <Link to="/" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/"
+                end
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Home
-              </Link>
+              </NavLink>
 
-              <Link to="/cart" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/cart"
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Cart
-              </Link>
+              </NavLink>
 
-              <Link to="/orders" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/orders"
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Orders
-              </Link>
+              </NavLink>
 
-              <Link to="/my-returns" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/my-returns"
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Returns
-              </Link>
+              </NavLink>
             </>
           )}
 
           {role === "vendor" && (
-            <Link to="/vendor" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/vendor"
+              className={mobileActiveClass}
+              onClick={() => setMenuOpen(false)}
+            >
               Vendor Panel
-            </Link>
+            </NavLink>
           )}
 
           {role === "admin" && (
-            <Link to="/admin" onClick={() => setMenuOpen(false)}>
+            <NavLink
+              to="/admin"
+              className={mobileActiveClass}
+              onClick={() => setMenuOpen(false)}
+            >
               Admin Panel
-            </Link>
+            </NavLink>
           )}
 
           {!user ? (
             <>
-              <Link to="/login" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/login"
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Login
-              </Link>
+              </NavLink>
 
-              <Link to="/register" onClick={() => setMenuOpen(false)}>
+              <NavLink
+                to="/register"
+                className={mobileActiveClass}
+                onClick={() => setMenuOpen(false)}
+              >
                 Register
-              </Link>
+              </NavLink>
             </>
           ) : (
             <button
@@ -147,6 +194,7 @@ export default function Navbar() {
               Logout
             </button>
           )}
+
         </div>
       )}
     </nav>

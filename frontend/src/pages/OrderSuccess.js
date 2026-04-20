@@ -16,7 +16,7 @@ export default function OrderSuccess() {
   const fetchOrder = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/orders/${id}`,
+  `${process.env.REACT_APP_API_URL}/api/orders/${id}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -73,7 +73,7 @@ export default function OrderSuccess() {
             className="flex items-center gap-4 mb-4 border-b pb-4"
           >
             <img
-              src={`http://localhost:5000${item.image}`}
+              src={`${process.env.REACT_APP_API_URL}${item.image}`}
               alt={item.name}
               className="w-20 h-20 object-cover rounded"
             />

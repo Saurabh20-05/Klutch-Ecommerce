@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 export default function Cart() {
   const { user } = useAuth();
   const navigate = useNavigate();
+
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -35,6 +36,8 @@ export default function Cart() {
   };
 
   const updateQuantity = async (productId, quantity) => {
+    if (quantity < 1) return;
+
     try {
       const { data } = await axios.put(
         `${process.env.REACT_APP_API_URL}/api/cart/update`,
@@ -48,7 +51,7 @@ export default function Cart() {
 
       setCart(data);
     } catch (error) {
-      console.error("Update error:", error);
+      console.error(error);
     }
   };
 
@@ -83,9 +86,8 @@ export default function Cart() {
       );
 
       toast.success("Order placed successfully");
-      navigate(
- `/order-success/${data[0]._id}`
-);
+
+      navigate(`/order-success/${data[0]._id}`);
 
     } catch (err) {
       console.error(err);
@@ -116,29 +118,39 @@ export default function Cart() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-10">
-      <h1 className="text-3xl font-bold mb-10">
+    <div className="min-h-screen bg-gray-100 p-8">
+
+      <h1 className="text-3xl font-bold mb-8">
         Your Shopping Cart
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
         {cart.items.map((item) => (
           <div
             key={item._id}
-            className="bg-white rounded-xl shadow-md overflow-hidden"
+            className="
+bg-white
+rounded-xl
+shadow-md
+overflow-hidden
+max-w-sm
+"
           >
+
             <img
               src={`${process.env.REACT_APP_API_URL}${item.product.image}`}
               alt={item.product.name}
-              className="w-full h-64 object-cover"
+              className="w-full h-28 object-contain bg-white"
             />
 
-            <div className="p-6">
+            <div className="p-3">
+
               <h2 className="text-xl font-semibold">
                 {item.product.name}
               </h2>
 
-              <p className="text-blue-600 font-bold text-lg mt-2">
+              <p className="text-blue-600 font-bold mt-2">
                 ₹{item.product.price}
               </p>
 
@@ -147,7 +159,8 @@ export default function Cart() {
                 {item.product.price * item.quantity}
               </p>
 
-              <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="flex items-center justify-center gap-4 mt-5">
+
                 <button
                   onClick={() =>
                     updateQuantity(
@@ -160,7 +173,7 @@ export default function Cart() {
                   -
                 </button>
 
-                <span className="text-lg font-semibold">
+                <span className="font-semibold text-lg">
                   {item.quantity}
                 </span>
 
@@ -175,29 +188,35 @@ export default function Cart() {
                 >
                   +
                 </button>
+
               </div>
 
               <button
                 onClick={() =>
                   removeItem(item.product._id)
                 }
-                className="w-full bg-red-500 hover:bg-red-600 text-white mt-6 py-2 rounded-lg"
+                className="w-full bg-red-500 hover:bg-red-600 text-white mt-5 py-2 rounded-lg"
               >
                 Remove from Cart
               </button>
+
             </div>
           </div>
         ))}
+
       </div>
 
-      <div className="bg-white rounded-xl shadow-md p-6 mt-12">
+      <div className="bg-white rounded-2xl shadow-md p-6 mt-10">
+
         <h2 className="text-2xl font-bold mb-4">
           Order Summary
         </h2>
 
         <div className="flex justify-between text-lg">
           <span>Total:</span>
-          <span className="font-bold">₹{total}</span>
+          <span className="font-bold">
+            ₹{total}
+          </span>
         </div>
 
         <button
@@ -206,7 +225,9 @@ export default function Cart() {
         >
           Place Order
         </button>
+
       </div>
+
     </div>
   );
 }
