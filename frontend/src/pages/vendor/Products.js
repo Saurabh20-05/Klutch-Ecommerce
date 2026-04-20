@@ -27,7 +27,7 @@ export default function VendorProducts() {
     } catch (error) {
       toast.error("Failed to load products");
     }
-  }, []);
+  }, [user?.token]);
 
   useEffect(() => {
  fetchProducts();

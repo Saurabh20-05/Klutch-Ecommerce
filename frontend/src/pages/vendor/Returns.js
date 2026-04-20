@@ -25,7 +25,7 @@ export default function VendorReturns() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [user?.token]);
 
 
 

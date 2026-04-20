@@ -18,9 +18,6 @@ export default function EditProduct() {
 
   const [image, setImage] = useState(null);
 
-  useEffect(() => {
- fetchProduct();
-}, [fetchProduct]);
 
   const fetchProduct = useCallback(async () => {
     try {
@@ -38,7 +35,14 @@ export default function EditProduct() {
     } catch (error) {
       toast.error("Failed to load product");
     }
-  }, []);
+  }, [id]);
+
+
+  useEffect(() => {
+ fetchProduct();
+}, [fetchProduct]);
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

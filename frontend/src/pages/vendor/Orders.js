@@ -42,7 +42,7 @@ export default function VendorOrders() {
 
 
 
-  const filterOrders = () => {
+  const filterOrders = useCallback(() => {
     let filtered = [...orders];
 
     if (statusFilter !== "All") {
@@ -58,11 +58,11 @@ export default function VendorOrders() {
     }
 
     setFilteredOrders(filtered);
-  };
+  }, [orders, statusFilter, search]);
 
 
 
-  
+
 
 
   useEffect(() => {
@@ -70,8 +70,8 @@ export default function VendorOrders() {
 }, [fetchOrders]);
 
   useEffect(() => {
-    filterOrders();
-  }, [statusFilter, search, orders]);
+ filterOrders();
+}, [filterOrders]);
 
   
 
