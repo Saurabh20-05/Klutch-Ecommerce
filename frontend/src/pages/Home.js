@@ -36,7 +36,7 @@ export default function Home() {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/products"
+          `${process.env.REACT_APP_API_URL}/api/products`
         );
         setProducts(data);
       } catch (err) {
@@ -57,7 +57,7 @@ export default function Home() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/cart/add",
+        `${process.env.REACT_APP_API_URL}/api/cart/add`,
         { productId, quantity: 1 },
         {
           headers: {
@@ -230,7 +230,11 @@ export default function Home() {
     </h2>
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-      {products.map((product, index) => (
+      {products.map((product, index) => {
+
+console.log(product.image);
+
+return (
         <div
           key={product._id}
           onClick={() => setSelectedProduct(product)}
@@ -339,7 +343,8 @@ export default function Home() {
           </div>
 
         </div>
-      ))}
+      );
+})}
     </div>
 
   </div>

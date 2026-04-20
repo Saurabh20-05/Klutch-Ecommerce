@@ -15,7 +15,7 @@ export default function VendorReturns() {
   const fetchReturns = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/returns/admin/all",
+        `${process.env.REACT_APP_API_URL}/api/returns/admin/all`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

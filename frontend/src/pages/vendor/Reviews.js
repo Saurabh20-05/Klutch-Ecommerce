@@ -17,7 +17,7 @@ const VendorReviews = () => {
   const fetchReviews = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/reviews/vendor",
+        `${process.env.REACT_APP_API_URL}/api/reviews/vendor`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

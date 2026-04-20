@@ -46,7 +46,7 @@ export default function RequestReturn() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/returns",
+        `${process.env.REACT_APP_API_URL}/api/returns`,
         {
           orderId,
           productId,

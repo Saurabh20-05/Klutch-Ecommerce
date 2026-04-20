@@ -34,7 +34,7 @@ export default function ProductReviews() {
 
       if (user) {
         const orderRes = await axios.get(
-          "http://localhost:5000/api/orders/my",
+          `${process.env.REACT_APP_API_URL}/api/orders/my`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
@@ -66,7 +66,7 @@ export default function ProductReviews() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/reviews",
+        `${process.env.REACT_APP_API_URL}/api/reviews`,
         {
           productId: id,
           rating,

@@ -13,7 +13,7 @@ export default function MyReturns() {
     const fetchReturns = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/returns/my",
+          `${process.env.REACT_APP_API_URL}/api/returns/my`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,

@@ -29,7 +29,7 @@ export default function VendorOrders() {
 
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/orders/vendor",
+        `${process.env.REACT_APP_API_URL}/api/orders/vendor`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

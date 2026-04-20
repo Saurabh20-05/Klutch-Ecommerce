@@ -6,6 +6,9 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
 
   if (!product) return null;
 
+  console.log(process.env.REACT_APP_API_URL);
+console.log(product.image);
+
   return (
     <div
       className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50"
@@ -26,7 +29,7 @@ lg:w-2/3 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden relati
 
         <div className="md:w-1/2 bg-gray-100 flex items-center justify-center p-6">
           <img
-            src={`http://localhost:5000${product.image}`}
+            src={`${process.env.REACT_APP_API_URL}${product.image}`}
             alt={product.name}
             className="max-h-[250px] md:max-h-[400px] object-contain"
           />

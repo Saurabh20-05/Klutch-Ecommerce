@@ -18,7 +18,7 @@ export default function Cart() {
   const fetchCart = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/cart",
+        `${process.env.REACT_APP_API_URL}/api/cart`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -37,7 +37,7 @@ export default function Cart() {
   const updateQuantity = async (productId, quantity) => {
     try {
       const { data } = await axios.put(
-        "http://localhost:5000/api/cart/update",
+        `${process.env.REACT_APP_API_URL}/api/cart/update`,
         { productId, quantity },
         {
           headers: {
@@ -55,7 +55,7 @@ export default function Cart() {
   const removeItem = async (productId) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:5000/api/cart/remove/${productId}`,
+        `${process.env.REACT_APP_API_URL}/api/cart/remove/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -73,7 +73,7 @@ export default function Cart() {
   const placeOrder = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/orders",
+        `${process.env.REACT_APP_API_URL}/api/orders`,
         {},
         {
           headers: {
@@ -128,7 +128,7 @@ export default function Cart() {
             className="bg-white rounded-xl shadow-md overflow-hidden"
           >
             <img
-              src={`http://localhost:5000${item.product.image}`}
+              src={`${process.env.REACT_APP_API_URL}${item.product.image}`}
               alt={item.product.name}
               className="w-full h-64 object-cover"
             />

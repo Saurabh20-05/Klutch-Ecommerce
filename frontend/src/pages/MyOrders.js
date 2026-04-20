@@ -14,7 +14,7 @@ export default function MyOrders() {
     const fetchOrders = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/orders/my",
+          `${process.env.REACT_APP_API_URL}/api/orders/my`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,

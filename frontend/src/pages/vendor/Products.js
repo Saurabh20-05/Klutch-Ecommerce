@@ -16,7 +16,7 @@ export default function VendorProducts() {
   const fetchProducts = async () => {
     try {
       const { data } = await axios.get(
- "http://localhost:5000/api/products/vendor/my",
+ `${process.env.REACT_APP_API_URL}/api/products/vendor/my`,
  {
    headers:{
       Authorization:`Bearer ${user.token}`

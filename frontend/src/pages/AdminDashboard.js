@@ -35,9 +35,9 @@ export default function Admin() {
         };
 
         const [summary, vendorData, customerData] = await Promise.all([
-          axios.get("http://localhost:5000/api/admin/summary", config),
-          axios.get("http://localhost:5000/api/admin/vendors", config),
-          axios.get("http://localhost:5000/api/admin/customers", config),
+          axios.get(`${process.env.REACT_APP_API_URL}/api/admin/summary`, config),
+          axios.get(`${process.env.REACT_APP_API_URL}/api/admin/vendors`, config),
+          axios.get(`${process.env.REACT_APP_API_URL}/api/admin/customers`, config),
         ]);
 
         setStats(summary.data);
@@ -56,7 +56,7 @@ export default function Admin() {
   const removeUser = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/admin/remove-user/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/admin/remove-user/${id}`,
         {
           headers: { Authorization: `Bearer ${user.token}` },
         }
