@@ -7,14 +7,6 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
-
-app.use(express.json());
-
 
 app.use(
   cors({
@@ -26,6 +18,18 @@ app.use(
     credentials: true,
   })
 );
+
+
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
+
+app.use(express.json());
+
+
+
 
 app.use(
   "/uploads",
